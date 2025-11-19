@@ -173,7 +173,6 @@ with col_ex4:
 prompt = st.text_area(
     "Prompt",
     placeholder="उदाहरण: आखामा आउने सपनी",
-    height=100,
     label_visibility="collapsed",
     value=st.session_state.get("prompt", "")
 )
@@ -291,5 +290,6 @@ if generate:
 
     else:
         st.warning("Please enter a prompt to generate lyrics.")
+
 
 
