@@ -153,26 +153,30 @@ else:
 # --------------------------
 st.markdown("### 🎤 Enter Lyrics Starter:")
 
-# Example prompts
-col_prompt, col_examples = st.columns([3, 1])
+# Create one row of 4 columns for example buttons
+col_ex1, col_ex2, col_ex3, col_ex4 = st.columns([1,1,1,1])
 
-with col_examples:
-    st.caption("Quick examples:")
+with col_ex1:
     if st.button("Example 1", use_container_width=True):
         st.session_state.prompt = "म तिमी बिना"
+with col_ex2:
     if st.button("Example 2", use_container_width=True):
         st.session_state.prompt = "माया गर्छु म तिमीलाई"
+with col_ex3:
     if st.button("Example 3", use_container_width=True):
         st.session_state.prompt = "सपना देखेको थिएँ"
+with col_ex4:
+    if st.button("Example 4", use_container_width=True):
+        st.session_state.prompt = "तिमी मेरो जीवन"
 
-with col_prompt:
-    prompt = st.text_area(
-        "Prompt",
-        placeholder="उदाहरण: म तिमी बिना ",
-        height=100,
-        label_visibility="collapsed",
-        value=st.session_state.get("prompt", "")
-    )
+# Now, below the buttons, place the full-width text area input
+prompt = st.text_area(
+    "Prompt",
+    placeholder="उदाहरण: म तिमी बिना ",
+    height=100,
+    label_visibility="collapsed",
+    value=st.session_state.get("prompt", "")
+)
 
 col1, col2, col3, col4 = st.columns(4)
 with col1:
@@ -287,3 +291,4 @@ if generate:
 
     else:
         st.warning("Please enter a prompt to generate lyrics.")
+
