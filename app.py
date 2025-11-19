@@ -157,22 +157,22 @@ st.markdown("### 🎤 Enter Lyrics Starter:")
 col_ex1, col_ex2, col_ex3, col_ex4 = st.columns([1,1,1,1])
 
 with col_ex1:
-    if st.button("Example 1", use_container_width=True):
+    if st.button("म तिमी बिना", use_container_width=True):
         st.session_state.prompt = "म तिमी बिना"
 with col_ex2:
-    if st.button("Example 2", use_container_width=True):
+    if st.button("माया गर्छु म तिमीलाई", use_container_width=True):
         st.session_state.prompt = "माया गर्छु म तिमीलाई"
 with col_ex3:
-    if st.button("Example 3", use_container_width=True):
+    if st.button("सपना देखेको थिएँ", use_container_width=True):
         st.session_state.prompt = "सपना देखेको थिएँ"
 with col_ex4:
-    if st.button("Example 4", use_container_width=True):
-        st.session_state.prompt = "तिमी मेरो जीवन"
+    if st.button("मेरो देशको माटोको माया", use_container_width=True):
+        st.session_state.prompt = "मेरो देशको माटोको माया"
 
 # Now, below the buttons, place the full-width text area input
 prompt = st.text_area(
     "Prompt",
-    placeholder="उदाहरण: म तिमी बिना ",
+    placeholder="उदाहरण: आखामा आउने सपनी",
     height=100,
     label_visibility="collapsed",
     value=st.session_state.get("prompt", "")
@@ -186,7 +186,7 @@ with col2:
 with col3:
     top_p = st.slider("Top-p (nucleus sampling)", 0.1, 1.0, 0.9)
 with col4:
-    use_postprocessing = st.checkbox("🔍 Enable Post-processing", value=False,
+    use_postprocessing = st.checkbox("🔍 Enable Post-processing", value=True,
                                       help="Generate 30 samples and select the best based on repetition and structure scores")
 
 generate = st.button("🎧 Generate Lyrics")
@@ -291,4 +291,5 @@ if generate:
 
     else:
         st.warning("Please enter a prompt to generate lyrics.")
+
 
