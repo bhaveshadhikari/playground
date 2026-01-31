@@ -38,8 +38,8 @@ Wait for the Colab output cell that gives you the public Playground URL and open
 1. Clone the repository
 
 	```bash
-	git clone <repo-url>
-	cd "nepali lyrics generator"
+	git clone https://github.com/bhaveshadhikari/playground/
+	cd "playground"
 	```
 
 2. Install dependencies (preferably in a virtualenv)
